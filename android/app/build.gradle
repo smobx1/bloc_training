@@ -47,6 +47,25 @@ android {
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
         }
+
+        flavorDimensions "default"
+        productFlavors{
+            production{
+                dimension "default"
+                resValue "string", "app_name", "Bloc Training"
+                applicationIdSuffix ""
+            }
+            staging{
+                dimension "default"
+                resValue "string", "app_name", "Bloc Training stg"
+                applicationIdSuffix ".stg"
+            }
+            development{
+                dimension "default"
+                resValue "string", "app_name", "Bloc Training dev"
+                applicationIdSuffix ".dev"
+            }
+        }
     }
 }
 
